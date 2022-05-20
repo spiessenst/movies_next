@@ -4,7 +4,7 @@ import Link from "next/link";
 function Home({ movies }) {
   return (
     <div className="container">
-      <h1>Trending Movies</h1>
+      <h1>Popular Movies</h1>
       <section className="movieGrid">
         {movies &&
           movies.map(({ id, poster_path }) => (
@@ -28,7 +28,7 @@ export const getStaticProps = async () => {
   const {
     data: { results: movies },
   } = await axios(
-    "https://api.themoviedb.org/3/trending/all/day?api_key=b967ca14675f5b003835882b5dbd8544"
+    "https://api.themoviedb.org/3/movie/popular?api_key=b967ca14675f5b003835882b5dbd8544&language=en-US&page=1"
   );
   return {
     props: {
