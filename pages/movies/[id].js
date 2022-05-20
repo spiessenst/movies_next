@@ -28,7 +28,7 @@ export const getStaticPaths = async () => {
   );
 
   return {
-    paths: movies.map(({ id: id }) => ({ params: { id: id.toString() } })),
+    paths: movies.map(({ id }) => ({ params: { id: id.toString() } })),
 
     fallback: "blocking",
   };
