@@ -1,0 +1,44 @@
+.container{
+    width: 80%;
+    margin: 0 auto;
+
+    h1{
+
+        font-size: 50px;
+        color: white;
+      }
+
+      h2 , p{
+        color: white;
+
+      }
+
+
+}
+
+
+
+.movieGrid
+{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    article{
+
+        cursor: pointer;
+        flex: 1 1 300px;
+        a{display: block;}
+        img{
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 5/7;
+            object-fit: cover;
+        }
+     
+
+    }
+}
+
