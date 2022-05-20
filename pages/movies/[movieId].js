@@ -28,7 +28,9 @@ export const getStaticPaths = async () => {
   );
 
   return {
-    paths: movies.map(({ id }) => ({ params: { id: id.toString() } })),
+    paths: movies.map(({ id: movieId }) => ({
+      params: { movieId: movieId.toString() },
+    })),
 
     fallback: "blocking",
   };
@@ -36,11 +38,11 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (ctx) => {
   const {
-    params: { id },
+    params: { movieId },
   } = ctx;
 
   const { data: movie } = await axios(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=b967ca14675f5b003835882b5dbd8544`
+    `https://api.themoviedb.org/3/movie/${movieId}?api_key=b967ca14675f5b003835882b5dbd8544`
   );
 
   return {
